@@ -57,11 +57,16 @@ p.write({division: 'doubles', style: 'freestyle'})
 // _point = [0,2,0]
 ```
 
+## Notes
+
+You can use [`nd-element`](https://github.com/nrw/nd-element) to update a dom
+node with streamed in html strings that include a point path attribute.
+
 ## What can I use this for?
 
-Perhaps you have some interface elements that are represented nicely as a
-multidimensional array. Based on an object's properties, you can find which dom
-element it belongs in via its point path.
+For interface elements that are represented nicely as a multidimensional array,
+you can find which node an element belongs in via its point path. `nd-point`
+allows you to find an object's n-dimensional point based on an its properties.
 
 ```
 page

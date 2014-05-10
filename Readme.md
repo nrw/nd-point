@@ -2,6 +2,8 @@
 
 Find the points objects should occupy in an n-dimensional array.
 
+[![testling badge](https://ci.testling.com/nrw/nd-point.png)](https://ci.testling.com/nrw/nd-point)
+
 ## Example
 
 ``` js

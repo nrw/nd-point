@@ -63,24 +63,24 @@ Perhaps you have some interface elements that are represented nicely as a
 multidimensional array. Based on an object's properties, you can find which dom
 element it belongs in via its point path.
 
-``` js
+```
 page
-└─┬ tabbed-pane // [0]
-  ├─┬ table // [0,0]
-  │ ├─┬ row // [0,0,0]
-  │ │ ├── column // [0,0,0,0]
-  │ │ └── column // [0,0,0,1]
-  │ └─┬ row // [0,0,1]
-  │   └── column // [0,0,1,0]
-  ├ tabbed-pane  // [1]
-  └─┬ table // [1,0]
-    ├─┬ row // [1,0,0]
-    │ └── column // [1,0,0,0]
-    ├─┬ row // [1,0,1]
-    │ └── column // [1,0,1,0]
-    ├ table // [1,1]
-    └─┬ row // [1,1,0]
-      └── column // [1,1,0,0]
+└─┬ tabbed-pane [0]
+  ├─┬ table [0,0]
+  │ ├─┬ row [0,0,0]
+  │ │ ├── column [0,0,0,0]
+  │ │ └── column [0,0,0,1]
+  │ └─┬ row [0,0,1]
+  │   └── column [0,0,1,0]
+  ├ tabbed-pane [1]
+  └─┬ table [1,0]
+    ├─┬ row [1,0,0]
+    │ └── column [1,0,0,0]
+    ├─┬ row [1,0,1]
+    │ └── column [1,0,1,0]
+    ├ table [1,1]
+    └─┬ row [1,1,0]
+      └── column [1,1,0,0]
 ```
 
 ## License

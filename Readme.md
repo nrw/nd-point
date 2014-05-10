@@ -1,4 +1,4 @@
-# nd-point
+# nd-point [![build status](https://secure.travis-ci.org/nrw/nd-point.png)](http://travis-ci.org/nrw/nd-point)
 
 Find the points objects should occupy in an n-dimensional array.
 

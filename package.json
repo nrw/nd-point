@@ -1,0 +1,44 @@
+{
+  "name": "nd-point",
+  "description": "find the points objects should occupy in a multidimensional array",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nrw/nd-point.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "dependencies": {
+    "through2": "0.4.x"
+  },
+  "devDependencies": {
+    "tape": "2.x.x",
+    "concat-stream": "1.4.x"
+  },
+  "homepage": "https://github.com/nrw/nd-point",
+  "keywords": [
+    "ndarray",
+    "multidimensional",
+    "array",
+    "point"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Nicholas Westlake"
+  },
+  "testling": {
+    "files": [ "test/*.js" ],
+    "browsers": [
+      "ie/8..latest",
+      "firefox/15",
+      "firefox/latest",
+      "firefox/nightly",
+      "chrome/15",
+      "chrome/latest",
+      "opera/latest",
+      "safari/latest"
+    ]
+  }
+}

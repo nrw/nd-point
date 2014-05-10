@@ -8,7 +8,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "node test/index.js"
+    "test": "tape test/*.js"
   },
   "dependencies": {
     "through2": "0.4.x"
@@ -29,7 +29,7 @@
     "name": "Nicholas Westlake"
   },
   "testling": {
-    "files": [ "test/*.js" ],
+    "files": "test/*.js",
     "browsers": [
       "ie/8..latest",
       "firefox/15",
@@ -38,7 +38,10 @@
       "chrome/15",
       "chrome/latest",
       "opera/latest",
-      "safari/latest"
+      "safari/latest",
+      "iphone/6",
+      "ipad/6",
+      "android-browser/latest"
     ]
   }
 }

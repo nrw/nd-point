@@ -7,60 +7,48 @@ Find the points objects should occupy in an n-dimensional array.
 ## Example
 
 ``` js
-var point = require('nd-point')
+var Point = require('nd-point')
+var point = Point(['division','level','style'])
 
-p = point(['division','level','style'])
-
-p.pipe(output)
-
-var docs = [
-  {division: 'doubles', level: 'beginner', style: 'freestyle'},
-  {division: 'doubles', level: 'intermediate', style: 'freestyle'},
-  {division: 'singles', level: 'beginner', style: 'freestyle'},
-  {division: 'doubles', level: 'advanced', style: 'compulsory'}
-]
-
-// adds property '_point' to each document with the coordinates.
-docs.forEach(function (doc) { p.write(doc) })
-p.end()
-
-// value of each doc's '_point': [0,0,0], [0,1,0], [1,0,0], [0,2,1]
+point({division: 'doubles', level: 'beginner', style: 'freestyle'}) // [0,0,0]
+point({division: 'doubles', level: 'intermediate', style: 'freestyle'}) // [0,1,0]
+point({division: 'singles', level: 'beginner', style: 'freestyle'}) // [1,0,0]
+point({division: 'doubles', level: 'advanced', style: 'compulsory'}) // [0,2,1]
 ```
 
 ## Usage
 
-### var p = point(properties, options={})
+### var point = Point(properties, options={})
 
-Returns a new `point` through stream that takes json objects as input and
-outputs the original documents with a `_point` property which is an array of
-integers. You can set the property name of `_point` by setting `options.key`.
+Returns a new `point` function that takes json objects as input and returns the
+point path (an array of integers) based on the object's properties.
 
 ## How it works
 
-With a new `point` stream, the first time a value is seen for a property, it is
-assigned the next consecutive integer for that property. Properties are added
-to the `_point` array in the order they were passed in.
+With a new `point` function, the first time a value is seen for a property, it
+is assigned the next consecutive integer for that property. Properties are added
+to the point path in the order they were passed in.
 
 ``` js
-p = point(['division','level','style'])
+var point = Point(['division','level','style'])
 
 // for the first doc, all properties are making their first appearance.
-p.write({division: 'doubles', level: 'beginner', style: 'freestyle'})
-// _point = [0,0,0]
+point({division: 'doubles', level: 'beginner', style: 'freestyle'})
+// [0,0,0]
 
 // 'intermediate' is a new level
-p.write({division: 'doubles', level: 'intermediate', style: 'freestyle'})
-// _point = [0,1,0]
+point({division: 'doubles', level: 'intermediate', style: 'freestyle'})
+// [0,1,0]
 
 // '' (empty) is a new level
-p.write({division: 'doubles', style: 'freestyle'})
-// _point = [0,2,0]
+point({division: 'doubles', style: 'freestyle'})
+// [0,2,0]
 ```
 
 ## Notes
 
-You can use [`nd-element`](https://github.com/nrw/nd-element) to update a dom
-node with streamed in html strings that include a point path attribute.
+You can use [`sortable-object-hash`](https://github.com/nrw/sortable-object-hash)
+to order objects based on their properties before assigning them an `nd-point`.
 
 ## What can I use this for?
 

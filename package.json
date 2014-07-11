@@ -11,11 +11,9 @@
     "test": "tape test/*.js"
   },
   "dependencies": {
-    "through2": "0.4.x"
   },
   "devDependencies": {
-    "tape": "2.x.x",
-    "concat-stream": "1.4.x"
+    "tape": "2.x.x"
   },
   "homepage": "https://github.com/nrw/nd-point",
   "keywords": [

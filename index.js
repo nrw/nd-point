@@ -1,28 +1,22 @@
-var through = require('through2')
+module.exports = Point
 
-module.exports = function point (properties, options) {
-  var seen;
-
-  options = options || {}
-  options.key = options.key || '_point'
-
-  seen = {}
+function Point (properties) {
+  var seen = {}
   properties.forEach(function (prop) { seen[prop] = [] })
 
-  return through.obj(function (chunk, enc, cb) {
-    chunk[options.key] = properties.map(function map (prop) {
-      return indexOf(seen[prop], chunk[prop])
+  return point
+
+  function point (obj) {
+    return properties.map(function map (prop) {
+      return indexOf(seen[prop], obj[prop])
     })
-    this.push(chunk)
-    cb()
-  })
+  }
 }
 
 function indexOf (arr, str) {
-  var index;
   str = str || ''
   str = str.toString()
-  index = arr.indexOf(str)
+  var index = arr.indexOf(str)
 
   if (index !== -1) return index
 

@@ -2,6 +2,8 @@ module.exports = Point
 
 function Point (properties) {
   var seen = {}
+  properties = properties || []
+
   properties.forEach(function (prop) { seen[prop] = [] })
 
   return point
